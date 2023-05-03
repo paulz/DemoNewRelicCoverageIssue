@@ -12,6 +12,7 @@
 		33F17EBC2A0226C50010D7C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33F17EBB2A0226C50010D7C1 /* Assets.xcassets */; };
 		33F17EBF2A0226C50010D7C1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33F17EBE2A0226C50010D7C1 /* Preview Assets.xcassets */; };
 		33F17EC92A0226C50010D7C1 /* OneginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F17EC82A0226C50010D7C1 /* OneginTests.swift */; };
+		33F17EE92A023C400010D7C1 /* NewRelic in Frameworks */ = {isa = PBXBuildFile; productRef = 33F17EE82A023C400010D7C1 /* NewRelic */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33F17EE92A023C400010D7C1 /* NewRelic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,6 +128,9 @@
 			dependencies = (
 			);
 			name = Onegin;
+			packageProductDependencies = (
+				33F17EE82A023C400010D7C1 /* NewRelic */,
+			);
 			productName = Onegin;
 			productReference = 33F17EB42A0226C40010D7C1 /* Onegin.app */;
 			productType = "com.apple.product-type.application";
@@ -176,6 +181,9 @@
 				Base,
 			);
 			mainGroup = 33F17EAB2A0226C40010D7C1;
+			packageReferences = (
+				33F17EE72A023C400010D7C1 /* XCRemoteSwiftPackageReference "newrelic-ios-agent-spm" */,
+			);
 			productRefGroup = 33F17EB52A0226C40010D7C1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -473,6 +481,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		33F17EE72A023C400010D7C1 /* XCRemoteSwiftPackageReference "newrelic-ios-agent-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/newrelic/newrelic-ios-agent-spm";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		33F17EE82A023C400010D7C1 /* NewRelic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 33F17EE72A023C400010D7C1 /* XCRemoteSwiftPackageReference "newrelic-ios-agent-spm" */;
+			productName = NewRelic;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 33F17EAC2A0226C40010D7C1 /* Project object */;
 }
