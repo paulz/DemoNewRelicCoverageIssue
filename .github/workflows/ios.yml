@@ -18,11 +18,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         
-      - name: Create Simulator
+      - name: Select Xcode
         run: |
-          xcode-select -p
+          sudo xcode-select --switch /Applications/Xcode_14.3.app
+          xcode-select --print-path
           xcodebuild -version
-          xcrun simctl create iphone14 com.apple.CoreSimulator.SimDeviceType.iPhone-14
+
+      - name: Create Simulator
+        run: xcrun simctl create iphone14 com.apple.CoreSimulator.SimDeviceType.iPhone-14
 
       - name: Build
         run: >
