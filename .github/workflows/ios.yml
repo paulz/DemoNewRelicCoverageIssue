@@ -12,25 +12,26 @@ jobs:
     runs-on: macos-latest
     env:
       scheme: ${{ 'Onegin' }}
-      platform: ${{ 'iOS Simulator' }}
-      device: ${{ 'iPhone 14' }}
       CI_RESULT_BUNDLE_PATH: test-results/tests-${{ github.run_number }}
 
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        
+      - name: Create Simulator
+        run: xcrun simctl create iphone14 com.apple.CoreSimulator.SimDeviceType.iPhone-14
 
       - name: Build
         run: >
           xcodebuild build-for-testing
           -scheme "$scheme"
-          -destination "platform=$platform,name=$device"
+          -destination name=iphone14
 
       - name: Test
         run: >
           xcodebuild test-without-building
           -scheme "$scheme"
-          -destination "platform=$platform,name=$device"
+          -destination name=iphone14
           -resultBundlePath $CI_RESULT_BUNDLE_PATH
 
       - name: Setup tmate session
