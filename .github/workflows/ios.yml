@@ -14,17 +14,37 @@ jobs:
       scheme: ${{ 'Onegin' }}
       platform: ${{ 'iOS' }}
       device: ${{ 'iPhone 11 Simulator' }}
+      CI_RESULT_BUNDLE_PATH: test-results/tests-${{ github.run_number }}
 
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
       - name: Build
-        run: |
-          xcodebuild build-for-testing -scheme "$scheme" -destination "platform=$platform,name=$device"
+        run: >
+          xcodebuild build-for-testing
+           -scheme "$scheme"
+           -destination "platform=$platform,name=$device"
+
       - name: Test
-        run: |
-          xcodebuild test-without-building -scheme "$scheme" -destination "platform=$platform,name=$device"
+        run: >
+          xcodebuild test-without-building
+           -scheme "$scheme"
+           -destination "platform=$platform,name=$device"
+           -resultBundlePath $CI_RESULT_BUNDLE_PATH
+
       - name: Setup tmate session
         if: ${{ failure() }}
         uses: mxschmitt/action-tmate@v3
         timeout-minutes: 10
+
+      - name: Archive results # due to: https://github.com/actions/upload-artifact/issues/243
+        if: always()
+        run: zip -FSry test-results.zip test-results || true
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-results
+          path: test-results.zip
