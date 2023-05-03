@@ -12,8 +12,8 @@ jobs:
     runs-on: macos-latest
     env:
       scheme: ${{ 'Onegin' }}
-      platform: ${{ 'iOS' }}
-      device: ${{ 'iPhone 11 Simulator' }}
+      platform: ${{ 'iOS Simulator' }}
+      device: ${{ 'iPhone 14' }}
       CI_RESULT_BUNDLE_PATH: test-results/tests-${{ github.run_number }}
 
     steps:
