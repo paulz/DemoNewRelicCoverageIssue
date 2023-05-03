@@ -33,6 +33,7 @@
 		33F17EC42A0226C50010D7C1 /* OneginTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OneginTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		33F17EC82A0226C50010D7C1 /* OneginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneginTests.swift; sourceTree = "<group>"; };
 		33F17EE12A0227160010D7C1 /* Onegin.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Onegin.xctestplan; sourceTree = "<group>"; };
+		33F17EE62A0229E80010D7C1 /* ios.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = ios.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				33F17EE12A0227160010D7C1 /* Onegin.xctestplan */,
+				33F17EE52A0229E80010D7C1 /* workflows */,
 				33F17EB62A0226C40010D7C1 /* Onegin */,
 				33F17EC72A0226C50010D7C1 /* OneginTests */,
 				33F17EB52A0226C40010D7C1 /* Products */,
@@ -97,6 +99,15 @@
 				33F17EC82A0226C50010D7C1 /* OneginTests.swift */,
 			);
 			path = OneginTests;
+			sourceTree = "<group>";
+		};
+		33F17EE52A0229E80010D7C1 /* workflows */ = {
+			isa = PBXGroup;
+			children = (
+				33F17EE62A0229E80010D7C1 /* ios.yml */,
+			);
+			name = workflows;
+			path = .github/workflows;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
