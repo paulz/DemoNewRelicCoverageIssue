@@ -26,6 +26,7 @@ jobs:
           xcodebuild build-for-testing
           -scheme "$scheme"
           -destination name=iphone14
+          | xcpretty
 
       - name: Test
         run: >
@@ -33,6 +34,7 @@ jobs:
           -scheme "$scheme"
           -destination name=iphone14
           -resultBundlePath $CI_RESULT_BUNDLE_PATH
+          | xcpretty
 
       - name: Setup tmate session
         if: ${{ failure() }}
