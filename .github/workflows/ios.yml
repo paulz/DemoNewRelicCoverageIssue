@@ -23,15 +23,15 @@ jobs:
       - name: Build
         run: >
           xcodebuild build-for-testing
-           -scheme "$scheme"
-           -destination "platform=$platform,name=$device"
+          -scheme "$scheme"
+          -destination "platform=$platform,name=$device"
 
       - name: Test
         run: >
           xcodebuild test-without-building
-           -scheme "$scheme"
-           -destination "platform=$platform,name=$device"
-           -resultBundlePath $CI_RESULT_BUNDLE_PATH
+          -scheme "$scheme"
+          -destination "platform=$platform,name=$device"
+          -resultBundlePath $CI_RESULT_BUNDLE_PATH
 
       - name: Setup tmate session
         if: ${{ failure() }}
