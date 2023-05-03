@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  Onegin
-//
-//  Created by Artium on 5/2/23.
-//
-
 import SwiftUI
 
 struct ContentView: View {

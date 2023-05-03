@@ -1,0 +1,37 @@
+{
+  "configurations" : [
+    {
+      "id" : "88A22AE8-342A-460E-BE95-D3F95C7699CD",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : {
+      "targets" : [
+        {
+          "containerPath" : "container:Onegin.xcodeproj",
+          "identifier" : "33F17EB32A0226C40010D7C1",
+          "name" : "Onegin"
+        }
+      ]
+    },
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:Onegin.xcodeproj",
+      "identifier" : "33F17EB32A0226C40010D7C1",
+      "name" : "Onegin"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:Onegin.xcodeproj",
+        "identifier" : "33F17EC32A0226C50010D7C1",
+        "name" : "OneginTests"
+      }
+    }
+  ],
+  "version" : 1
+}
